@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_quiz_questions_questions",
+  "info": {
+    "displayName": "questions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "answer_1": {
+      "type": "string",
+      "required": true
+    },
+    "answer_2": {
+      "type": "string",
+      "required": true
+    },
+    "answer_3": {
+      "type": "string",
+      "required": true
+    },
+    "answer_4": {
+      "type": "string",
+      "required": true
+    },
+    "correctAnswer": {
+      "type": "enumeration",
+      "enum": [
+        "answer_1",
+        "answer_2",
+        "answer_3",
+        "answer_4"
+      ],
+      "required": true
+    },
+    "imageQuestion": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

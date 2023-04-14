@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "singularName": "quiz",
+    "pluralName": "quizzes",
+    "displayName": "Quiz",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "featuredQuiz": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "quizType": {
+      "type": "enumeration",
+      "enum": [
+        "Free",
+        "Paid"
+      ],
+      "required": true,
+      "default": "Free"
+    },
+    "datePosted": {
+      "type": "date",
+      "required": true
+    },
+    "quizDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "difficultyLevel": {
+      "type": "enumeration",
+      "enum": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ],
+      "default": "Easy",
+      "required": true
+    },
+    "relatedQuizzes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quiz.quiz"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "quizzes"
+    },
+    "interestTags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "quizzes"
+    },
+    "questions": {
+      "displayName": "questions",
+      "type": "component",
+      "repeatable": true,
+      "component": "quiz-questions.questions"
+    },
+    "thumbnailImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "quizzes"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "materials": {
+      "displayName": "materials",
+      "type": "component",
+      "repeatable": true,
+      "component": "study-materials.materials"
+    },
+    "trendingQuiz": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
