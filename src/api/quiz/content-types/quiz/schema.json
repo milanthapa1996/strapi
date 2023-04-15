@@ -10,12 +10,21 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -25,7 +34,12 @@
     "featuredQuiz": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "quizType": {
       "type": "enumeration",
@@ -34,15 +48,30 @@
         "Paid"
       ],
       "required": true,
-      "default": "Free"
+      "default": "Free",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "datePosted": {
       "type": "date",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "quizDescription": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "difficultyLevel": {
       "type": "enumeration",
@@ -52,7 +81,12 @@
         "Hard"
       ],
       "default": "Easy",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "relatedQuizzes": {
       "type": "relation",
@@ -75,15 +109,25 @@
       "displayName": "questions",
       "type": "component",
       "repeatable": true,
-      "component": "quiz-questions.questions"
+      "component": "quiz-questions.questions",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "thumbnailImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "categories": {
       "type": "relation",
@@ -92,18 +136,33 @@
       "inversedBy": "quizzes"
     },
     "price": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "materials": {
       "displayName": "materials",
       "type": "component",
       "repeatable": true,
-      "component": "study-materials.materials"
+      "component": "study-materials.materials",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "trendingQuiz": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
